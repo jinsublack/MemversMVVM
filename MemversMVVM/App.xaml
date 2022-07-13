@@ -1,0 +1,21 @@
+﻿<Application x:Class="MemversMVVM.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:MemversMVVM"
+             xmlns:converter="clr-namespace:MemversMVVM.Converter"
+             xmlns:views="clr-namespace:MemversMVVM.Views"
+             xmlns:viewmodels="clr-namespace:MemversMVVM.ViewModels"
+             StartupUri="Views/WindowView.xaml">
+    <Application.Resources>
+        <converter:GenderConverter x:Key="genderConverterKey"/>
+        
+        <DataTemplate DataType="{x:Type viewmodels:LoginViewModel}">
+            <views:Login/>
+        </DataTemplate>
+        
+         <DataTemplate DataType="{x:Type viewmodels:MainViewModel}">
+                <views:Main/>
+         </DataTemplate>
+
+    </Application.Resources>
+</Application>
